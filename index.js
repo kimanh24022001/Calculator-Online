@@ -267,7 +267,9 @@ function equal() {
   if (string=='abs'){
     result=Math.abs(input.innerHTML/1); 
     }
-  input.innerHTML=result;
+  if (result!=0){
+     input.innerHTML=result;
+  }
   result=input.innerHTML;
   string='';
   document.querySelector(".overlay").innerHTML=string;
