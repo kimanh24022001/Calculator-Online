@@ -1,6 +1,7 @@
 input=document.querySelector(".input");
 var result=0;
 string='';
+flag='';
 document.getElementById("num0").onclick = function() {num0()};
 document.getElementById("num1").onclick = function() {num1()};
 document.getElementById("num2").onclick = function() {num2()};
@@ -39,6 +40,8 @@ document.getElementById("equal").onclick = function() {equal()};
 input.innerHTML ="";
 function AC() {
   input.innerHTML ="";
+  string='';
+  document.querySelector(".overlay").innerHTML='';
 }
 function point() {
   input.innerHTML += ".";
@@ -78,9 +81,14 @@ function EC() {
 }
 function sqr() {
   result=input.innerHTML/1 ;
-  string='sqr';
-  input.innerHTML ="";
-  document.querySelector(".overlay").innerHTML=string;
+  if (string!=''){
+    input.innerHTML ="SYNTAX ERROR";
+  }
+  else{
+    string='sqr';
+    input.innerHTML ="";
+    document.querySelector(".overlay").innerHTML=string;
+  }
 }
 function factorial() {
   result=input.innerHTML/1 ;
@@ -120,9 +128,14 @@ function tan() {
 }
 function add() {
   result=input.innerHTML/1 ;
-  string='+';
-  input.innerHTML ="";
-  document.querySelector(".overlay").innerHTML=string;
+  if (string!=''){
+    input.innerHTML ="SYNTAX ERROR";
+  }
+  else{
+    string='+';
+    input.innerHTML ="";
+    document.querySelector(".overlay").innerHTML=string;
+  }
 }
 function sin() {
   result=input.innerHTML/1;
@@ -173,15 +186,25 @@ function e() {
 }
 function căn() {
   result=input.innerHTML/1;
-  string='căn';
-  input.innerHTML ="";
-  document.querySelector(".overlay").innerHTML=string;
+  if (string!=''){
+    input.innerHTML ="SYNTAX ERROR";
+  }
+  else{
+    string='căn';
+    input.innerHTML ="";
+    document.querySelector(".overlay").innerHTML=string;
+  }
 }
 function divide() {
   result=input.innerHTML/1 ;
-  string='/';
-  input.innerHTML ="";
-  document.querySelector(".overlay").innerHTML=string;
+  if (string!=''){
+    input.innerHTML ="SYNTAX ERROR";
+  }
+  else{
+    string='/';
+    input.innerHTML ="";
+    document.querySelector(".overlay").innerHTML=string;
+  }
 }
 function exp() {
   result=input.innerHTML/1 ;
@@ -278,7 +301,12 @@ function equal() {
 }
 function multiply() {
   result=input.innerHTML/1 ;
-  string='*';
-  input.innerHTML ="";
-  document.querySelector(".overlay").innerHTML=string;
+  if (string!=''){
+    input.innerHTML ="SYNTAX ERROR";
+  }
+  else{
+    string='*';
+    input.innerHTML ="";
+    document.querySelector(".overlay").innerHTML=string;
+  }
 }
