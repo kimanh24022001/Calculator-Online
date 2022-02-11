@@ -85,7 +85,6 @@ function sqr() {
 function factorial() {
   result=input.innerHTML/1 ;
   string='!';
-  input.innerHTML ="";
   document.querySelector(".overlay").innerHTML=string;
 }
 function abs() {
@@ -227,19 +226,19 @@ function equal() {
     result=product; 
     }
   if (string=='sin'){
-    result=Math.sin(input.innerHTML/1); 
+    result=Math.sin(input.innerHTML/1 * Math.PI / 180); 
     }
   if (string=='cos'){
-    result=Math.cos(input.innerHTML/1); 
+    result= Math.cos(input.innerHTML/1 * Math.PI / 180); 
     }
    if (string=='tan'){
-    result=Math.tan(input.innerHTML/1); 
+    result=Math.round(Math.tan(input.innerHTML/1 * (Math.PI / 180))); 
     }
    if (string=='^'){
     result=Math.pow(result, input.innerHTML/1);
     }
   if (string=='cot'){
-    result=Math.cot(input.innerHTML/1); 
+    result=Math.cot(input.innerHTML/1 * Math.PI / 180); 
     }
   if (string=='log'){
     result=Math.log(input.innerHTML/1); 
@@ -267,12 +266,15 @@ function equal() {
   if (string=='abs'){
     result=Math.abs(input.innerHTML/1); 
     }
-  if (result!=0){
-     input.innerHTML=result;
+  if (string==''){
+    result=input.innerHTML;   
+    input.innerHTML=(input.innerHTML).slice(0, 13);
   }
-  result=input.innerHTML;
-  string='';
-  document.querySelector(".overlay").innerHTML=string;
+  else{input.innerHTML=result;
+    result=input.innerHTML;
+    input.innerHTML=(input.innerHTML).slice(0, 13);}
+    string='';
+    document.querySelector(".overlay").innerHTML=string;
 }
 function multiply() {
   result=input.innerHTML/1 ;
